@@ -1,88 +1,69 @@
-// Set the date we're counting down to (60 days from now)
-const countDownDate = new Date();
-countDownDate.setDate(countDownDate.getDate() + 60); // 60 days from now
-
-// Update the count down every 1 second
-const x = setInterval(function() {
-
-  // Get today's date and time
-  const now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  const distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the results
-  document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-  document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-  document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-  document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.querySelector('.countdown-container').innerHTML = "<h2>Launching Now!</h2><p>We're live! Visit us at yesyou.cloud</p>";
-  }
-}, 1000);
-
-// Form submission handling
-document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const email = this.querySelector('input[type="email"]').value;
-  alert(`Thank you! We'll notify you when yesyou.cloud launches.\nEmail: ${email}`);
-  this.reset();
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
 
-// Add smooth animations when elements come into view
+// Header scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.padding = '10px 0';
+    } else {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.padding = '20px 0';
+    }
+});
+
+// Simple form validation
+document.querySelector('.contact-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const message = this.querySelector('textarea').value;
+    
+    // Basic validation
+    if (name && email && message) {
+        alert('Thank you for your message! We will get back to you soon.');
+        this.reset();
+    } else {
+        alert('Please fill in all fields.');
+    }
+});
+
+// Animation on scroll
 const observerOptions = {
-  threshold: 0.1
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
 };
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate-in');
-    }
-  });
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+            observer.unobserve(entry.target);
+        }
+    });
 }, observerOptions);
 
-// Observe elements
-document.querySelectorAll('.main-title, .subtitle, .countdown-container, .notification-section').forEach(el => {
-  el.classList.add('fade-in');
-  observer.observe(el);
-});
-
-// Add floating animation to circles
-const circles = document.querySelectorAll('.circle');
-circles.forEach((circle, index) => {
-  circle.style.animationDelay = `${index * 2}s`;
-});
-
-// Add parallax effect to background elements
-document.addEventListener('mousemove', (e) => {
-  const mouseX = e.clientX / window.innerWidth;
-  const mouseY = e.clientY / window.innerHeight;
-  
-  const shapes = document.querySelectorAll('.circle, .shape');
-  shapes.forEach((shape, index) => {
-    const speed = (index + 1) * 0.02;
-    const x = mouseX * speed * 50;
-    const y = mouseY * speed * 50;
-    shape.style.transform = `translate(${x}px, ${y}px)`;
-  });
-});
-
-// Add scroll animations
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  const rate = scrolled * -0.5;
-  
-  document.querySelectorAll('.circle, .shape').forEach((el) => {
-    el.style.transform = `translateY(${rate}px)`;
-  });
+// Observe elements to animate
+document.addEventListener('DOMContentLoaded', function() {
+    const elementsToAnimate = document.querySelectorAll('.service-card, .portfolio-item, .cta-button');
+    elementsToAnimate.forEach(el => {
+        el.classList.add('not-animated');
+        observer.observe(el);
+    });
 });

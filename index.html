@@ -3,57 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yesyou.cloud - Coming Soon</title>
+    <title>YesYou.Cloud - Custom Website Solutions</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="logo-container">
-            <div class="logo">YC</div>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">YesYou.Cloud</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Custom Websites That Stand Out</h1>
+            <p>We build beautiful, functional websites tailored to your business needs.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
         </div>
-        
-        <div class="content-wrapper">
-            <h1 class="main-title">yesyou.cloud</h1>
-            <p class="subtitle">Our website is going to launch soon</p>
-            
-            <div class="countdown-container">
-                <div class="countdown-item">
-                    <span class="countdown-number" id="days">00</span>
-                    <span class="countdown-label">Days</span>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Custom Website Development</h3>
+                    <p>Fully customized websites built from scratch to meet your specific requirements.</p>
                 </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="hours">00</span>
-                    <span class="countdown-label">Hours</span>
+                <div class="service-card">
+                    <h3>E-commerce Solutions</h3>
+                    <p>Online stores designed to convert visitors into customers.</p>
                 </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="minutes">00</span>
-                    <span class="countdown-label">Minutes</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="seconds">00</span>
-                    <span class="countdown-label">Seconds</span>
+                <div class="service-card">
+                    <h3>Web Applications</h3>
+                    <p>Interactive web apps with advanced functionality and seamless user experience.</p>
                 </div>
             </div>
-            
-            <div class="notification-section">
-                <p class="notify-text">Be the first to know when we launch</p>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Notify Me</button>
-                </form>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Recent Projects</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/project1.jpg" alt="Project 1">
+                    <h3>E-commerce Site</h3>
+                    <p>Complete online store solution</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/project2.jpg" alt="Project 2">
+                    <h3>Landing Page</h3>
+                    <p>Conversion-focused marketing page</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/project3.jpg" alt="Project 3">
+                    <h3>Web Application</h3>
+                    <p>Custom dashboard application</p>
+                </div>
             </div>
         </div>
-        
-        <div class="visual-elements">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Tell us about your project" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
-    </div>
-    
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 YesYou.Cloud. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="js/script.js"></script>
 </body>
 </html>
