@@ -93,13 +93,37 @@ nav {
 }
 
 .hero .container {
-    text-align: center;
     z-index: 2;
     position: relative;
 }
 
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-illustration {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.illustration-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1rem;
     color: #1e293b;
     line-height: 1.2;
@@ -109,9 +133,6 @@ nav {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     color: #64748b;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .cta-button {
@@ -158,11 +179,25 @@ nav {
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+    margin-bottom: 20px;
+}
+
+.icon-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
 .service-card h3 {
@@ -234,44 +269,45 @@ nav {
 .contact h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
-.contact-form {
+.contact-cta {
     max-width: 600px;
     margin: 0 auto;
-    display: grid;
-    gap: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
+.contact-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
-.contact-form textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.contact-form button {
-    padding: 15px;
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
     background: white;
     color: #2563eb;
-    border: none;
-    border-radius: 10px;
+    text-decoration: none;
+    border-radius: 50px;
     font-size: 1.1rem;
     font-weight: 600;
-    cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.contact-form button:hover {
-    background: #f1f5f9;
-    transform: translateY(-2px);
+.whatsapp-button:hover {
+    background: #f0fdf4;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }
 
 /* Footer */
