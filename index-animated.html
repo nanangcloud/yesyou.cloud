@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yesyou.cloud - Coming Soon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">YC</div>
+        </div>
+        <h1 class="main-title">yesyou.cloud</h1>
+        <p class="subtitle">Something amazing is coming your way</p>
+        
+        <div class="countdown-container">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">Seconds</span>
+            </div>
+        </div>
+        
+        <div class="notification-section">
+            <p>Be the first to know when we launch</p>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Notify Me</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="bg-animation">
+        <div class="bg-bubble"></div>
+        <div class="bg-bubble bubble-2"></div>
+        <div class="bg-bubble bubble-3"></div>
+        <div class="bg-bubble bubble-4"></div>
+        <div class="bg-bubble bubble-5"></div>
+    </div>
+    
+    <script>
+        // Set the date we're counting down to (60 days from now)
+        const countDownDate = new Date();
+        countDownDate.setDate(countDownDate.getDate() + 60); // 60 days from now
+
+        // Update the count down every 1 second
+        const x = setInterval(function() {
+
+          // Get today's date and time
+          const now = new Date().getTime();
+
+          // Find the distance between now and the count down date
+          const distance = countDownDate - now;
+
+          // Time calculations for days, hours, minutes and seconds
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Display the results
+          document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+          document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+          document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+          document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+          // If the count down is finished, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.querySelector('.countdown-container').innerHTML = "<h2>Launched!</h2>";
+          }
+        }, 1000);
+
+        // Form submission handling
+        document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value;
+          alert(\`Thank you! We'll notify you when yesyou.cloud launches.\nEmail: \${email}\`);
+          this.reset();
+        });
+
+        // Add subtle animations to elements when they come into view
+        const observerOptions = {
+          threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.logo, .main-title, .subtitle, .countdown-item, .notification-section').forEach(el => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          observer.observe(el);
+        });
+    </script>
+</body>
+</html>
