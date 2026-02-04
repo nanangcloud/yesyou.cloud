@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
@@ -43,6 +43,7 @@ nav {
     font-size: 1.8rem;
     font-weight: 700;
     color: #2563eb;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .nav-links {
@@ -59,6 +60,7 @@ nav {
     color: #333;
     font-weight: 500;
     transition: color 0.3s ease;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .nav-links a:hover {
@@ -127,12 +129,14 @@ nav {
     margin-bottom: 1rem;
     color: #1e293b;
     line-height: 1.2;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     color: #64748b;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .cta-button {
@@ -145,6 +149,7 @@ nav {
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .cta-button:hover {
@@ -164,6 +169,7 @@ nav {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: #1e293b;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .services-grid {
@@ -204,10 +210,12 @@ nav {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #1e293b;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .service-card p {
     color: #64748b;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 /* Portfolio Section */
@@ -270,6 +278,7 @@ nav {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .contact-cta {
@@ -282,6 +291,7 @@ nav {
 .contact-cta p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .whatsapp-button {
@@ -296,6 +306,7 @@ nav {
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .whatsapp-button:hover {
@@ -316,6 +327,7 @@ footer {
     background: #0f172a;
     color: white;
     text-align: center;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 /* Responsive Design */

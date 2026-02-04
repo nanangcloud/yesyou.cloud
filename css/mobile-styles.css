@@ -1,0 +1,109 @@
+/* Mobile Applications Section */
+.mobile-apps {
+    padding: 100px 0;
+    background: #f1f5f9;
+}
+
+.mobile-apps h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1e293b;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.mobile-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.mobile-text {
+    flex: 1;
+}
+
+.mobile-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.mobile-features li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #475569;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.mobile-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.mobile-illustration {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.whatsapp-button-small {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    margin-top: 20px;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.whatsapp-button-small:hover {
+    background: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.whatsapp-button-small .whatsapp-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .mobile-content {
+        flex-direction: column;
+    }
+
+    .services h2,
+    .mobile-apps h2,
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .services-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
